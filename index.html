@@ -50,7 +50,7 @@
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
-      <button type="button" class="btn btn--header btn--cta-header" data-open-modal hidden>Reserve Seat</button>
+      <a href="#register" class="btn btn--header btn--cta-header" hidden>Reserve Seat</a>
       <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
@@ -64,7 +64,7 @@
         <li><a href="#host">The host</a></li>
         <li><a href="#register">Register</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><button type="button" class="btn btn--primary btn--full" data-open-modal>Reserve Seat</button></li>
+        <li><a href="#register" class="btn btn--primary btn--full">Reserve Seat</a></li>
       </ul>
     </nav>
   </header>
@@ -80,7 +80,7 @@
           <p class="hero-sub hero-reveal">An exclusive, invitation-style evening with Dr. Stephen Akintayo — Forbes' Best of Africa Investment Coach — where founders, CEOs and serious operators connect, raise their game, and walk away with relationships that change the trajectory of their business.</p>
           <p class="hero-detail hero-reveal">24th July · Glasgow, UK · Strictly Limited Seating</p>
           <div class="hero-actions hero-reveal">
-            <button type="button" class="btn btn--primary" data-open-modal>RESERVE MY SEAT</button>
+            <a href="#register" class="btn btn--primary">RESERVE MY SEAT</a>
           </div>
           <p class="hero-trust hero-reveal">Hosted by the Stephen Akintayo Foundation · Trusted by 850,000+ entrepreneurs worldwide</p>
         </div>
@@ -153,7 +153,7 @@
           <p class="eyebrow">The promise</p>
           <h2 id="promise-heading" class="section-title">One evening. The right room. A different trajectory.</h2>
           <p>The Glasgow CEOs &amp; Founders Meet &amp; Greet is an exclusive networking experience built for one purpose: to put serious founders and CEOs in direct contact with each other — and with Dr. Stephen Akintayo, one of Africa's most influential investment minds. This isn't a webinar. It's not a sales pitch dressed up as a seminar. It's a curated, high-trust gathering where the conversations are real, the people are vetted, and the connections are built to last well beyond the night.</p>
-          <button type="button" class="btn btn--primary" data-open-modal>SECURE MY PLACE</button>
+          <a href="#register" class="btn btn--primary">SECURE MY PLACE</a>
         </div>
         <aside class="split-aside split-aside--offset">
           <div class="accent-block">
@@ -202,7 +202,7 @@
           <li>A foothold in a global ecosystem spanning Africa, the UAE, the UK and the US.</li>
           <li>Clarity and conviction on your single most important next move.</li>
         </ul>
-        <button type="button" class="btn btn--primary btn--on-dark" data-open-modal>I'M READY — RESERVE MY SEAT</button>
+        <a href="#register" class="btn btn--primary btn--on-dark">I'M READY — RESERVE MY SEAT</a>
       </div>
     </section>
 
@@ -365,7 +365,51 @@
           <p class="registration-badge">Free admission</p>
           <p>Includes full access to the Meet &amp; Greet experience, keynote with Dr. Stephen Akintayo, curated networking with CEOs &amp; founders, and Q&amp;A. Registration is required — seating is strictly limited.</p>
         </div>
-        <button type="button" class="btn btn--primary" data-open-modal>REGISTER NOW</button>
+
+        <div class="register-form-wrap" id="register-form-wrap">
+          <p class="form-success" id="form-success" hidden role="status">Thank you. Your registration has been received. We'll be in touch shortly with next steps.</p>
+          <form
+            id="register-form"
+            class="register-form"
+            action="https://formspree.io/f/xojbrgaw"
+            method="POST"
+            novalidate
+            aria-describedby="register-form-desc"
+          >
+            <p id="register-form-desc" class="register-form-desc">Glasgow CEOs &amp; Founders Meet &amp; Greet · 24th July · Free admission</p>
+            <input type="hidden" name="_subject" value="Glasgow CEOs &amp; Founders Meet &amp; Greet — New registration">
+            <input type="hidden" name="event" value="Glasgow CEOs &amp; Founders Meet &amp; Greet · 24 July · Free admission">
+            <label class="form-honeypot" aria-hidden="true">
+              <span>Leave blank</span>
+              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+            </label>
+            <div class="form-field">
+              <label for="reg-name">Full name <span class="required">*</span></label>
+              <input type="text" id="reg-name" name="name" autocomplete="name" required>
+              <span class="field-error" id="err-name" role="alert"></span>
+            </div>
+            <div class="form-field">
+              <label for="reg-email">Email <span class="required">*</span></label>
+              <input type="email" id="reg-email" name="email" autocomplete="email" required>
+              <span class="field-error" id="err-email" role="alert"></span>
+            </div>
+            <div class="form-field">
+              <label for="reg-phone">Phone <span class="required">*</span></label>
+              <input type="tel" id="reg-phone" name="phone" autocomplete="tel" required>
+              <span class="field-error" id="err-phone" role="alert"></span>
+            </div>
+            <div class="form-field">
+              <label for="reg-company">Company <span class="required">*</span></label>
+              <input type="text" id="reg-company" name="company" autocomplete="organization" required>
+              <span class="field-error" id="err-company" role="alert"></span>
+            </div>
+            <input type="hidden" name="admission" value="free">
+            <p class="form-free-note">This is a complimentary event. No payment is required.</p>
+            <p class="form-error" id="form-error" role="alert" hidden></p>
+            <button type="submit" class="btn btn--primary btn--full" id="form-submit-btn">Submit registration</button>
+            <p class="form-note">By registering, you agree to receive event communications.</p>
+          </form>
+        </div>
       </div>
     </section>
 
@@ -381,7 +425,7 @@
           <li>Free to attend — but only for those who register before seats are gone.</li>
         </ul>
         <p class="pull-quote pull-quote--light">When access is the asset, the people who move first win.</p>
-        <button type="button" class="btn btn--primary btn--on-dark" data-open-modal>CLAIM MY SEAT BEFORE IT'S GONE</button>
+        <a href="#register" class="btn btn--primary btn--on-dark">CLAIM MY SEAT BEFORE IT'S GONE</a>
       </div>
     </section>
 
@@ -421,7 +465,7 @@
           </div>
           <div class="faq-item">
             <dt><button type="button" class="faq-trigger" aria-expanded="false" id="faq-q8" aria-controls="faq-a8">How do I register?</button></dt>
-            <dd id="faq-a8" class="faq-panel" hidden role="region" aria-labelledby="faq-q8">Tap any button on this page to reserve your seat.</dd>
+            <dd id="faq-a8" class="faq-panel" hidden role="region" aria-labelledby="faq-q8">Complete the registration form in the <a href="#register">Registration</a> section below, or tap any reserve button on this page to jump there.</dd>
           </div>
         </dl>
       </div>
@@ -433,7 +477,7 @@
         <h2 id="final-heading" class="section-title section-title--center">The room is filling. The question is whether you'll be in it.</h2>
         <p class="final-copy">You already know that the next level of your business won't come from doing more of the same. It comes from the right room, the right people, and a decision to show up. On 24th July, that room is in Glasgow.</p>
         <div class="final-actions">
-          <button type="button" class="btn btn--primary btn--large" data-open-modal>YES — RESERVE MY SEAT</button>
+          <a href="#register" class="btn btn--primary btn--large">YES — RESERVE MY SEAT</a>
         </div>
       </div>
     </section>
@@ -441,7 +485,7 @@
 
   <!-- Mobile sticky CTA (visible after hero scroll) -->
   <div class="mobile-cta-bar" id="mobile-cta-bar" aria-hidden="true">
-    <button type="button" class="btn btn--primary btn--full" data-open-modal>Reserve my seat</button>
+    <a href="#register" class="btn btn--primary btn--full">Reserve my seat</a>
   </div>
 
   <footer class="site-footer" role="contentinfo">
@@ -449,58 +493,6 @@
       <p>Hosted by the Stephen Akintayo Foundation. Questions? Email <a href="mailto:PRODUCTS@STEPHENAKINTAYO.COM">PRODUCTS@STEPHENAKINTAYO.COM</a> · Call <a href="tel:+2348167901719">+234 816 790 1719</a> / <a href="tel:+12815050527">+1 (281) 505-0527</a></p>
     </div>
   </footer>
-
-  <!-- Registration modal -->
-  <dialog class="modal" id="register-modal" aria-labelledby="modal-title" aria-describedby="modal-desc">
-    <div class="modal-backdrop" data-close-modal aria-hidden="true"></div>
-    <div class="modal-panel" role="document">
-      <button type="button" class="modal-close" data-close-modal aria-label="Close registration form">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-      <h2 id="modal-title" class="modal-title">Reserve your seat</h2>
-      <p id="modal-desc" class="modal-desc">Glasgow CEOs &amp; Founders Meet &amp; Greet · 24th July · Free admission</p>
-      <form
-        id="register-form"
-        class="register-form"
-        action="https://formspree.io/f/xojbrgaw"
-        method="POST"
-        novalidate
-      >
-        <input type="hidden" name="_subject" value="Glasgow CEOs &amp; Founders Meet &amp; Greet — New registration">
-        <input type="hidden" name="event" value="Glasgow CEOs &amp; Founders Meet &amp; Greet · 24 July · Free admission">
-        <label class="form-honeypot" aria-hidden="true">
-          <span>Leave blank</span>
-          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
-        </label>
-        <div class="form-field">
-          <label for="reg-name">Full name <span class="required">*</span></label>
-          <input type="text" id="reg-name" name="name" autocomplete="name" required>
-          <span class="field-error" id="err-name" role="alert"></span>
-        </div>
-        <div class="form-field">
-          <label for="reg-email">Email <span class="required">*</span></label>
-          <input type="email" id="reg-email" name="email" autocomplete="email" required>
-          <span class="field-error" id="err-email" role="alert"></span>
-        </div>
-        <div class="form-field">
-          <label for="reg-phone">Phone <span class="required">*</span></label>
-          <input type="tel" id="reg-phone" name="phone" autocomplete="tel" required>
-          <span class="field-error" id="err-phone" role="alert"></span>
-        </div>
-        <div class="form-field">
-          <label for="reg-company">Company <span class="required">*</span></label>
-          <input type="text" id="reg-company" name="company" autocomplete="organization" required>
-          <span class="field-error" id="err-company" role="alert"></span>
-        </div>
-        <input type="hidden" name="admission" value="free">
-        <p class="form-free-note">This is a complimentary event. No payment is required.</p>
-        <p class="form-error" id="form-error" role="alert" hidden></p>
-        <button type="submit" class="btn btn--primary btn--full" id="form-submit-btn">Submit registration</button>
-        <p class="form-note">By registering, you agree to receive event communications.</p>
-      </form>
-      <p class="form-success" id="form-success" hidden role="status">Thank you. Your registration has been received. We'll be in touch shortly with next steps.</p>
-    </div>
-  </dialog>
 
   <script src="script.js" defer></script>
 </body>

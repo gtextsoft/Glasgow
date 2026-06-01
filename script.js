@@ -1,6 +1,6 @@
 /**
  * Glasgow CEOs & Founders Meet & Greet
- * Vanilla JS — nav, sticky CTA, countdown, modal, scroll reveals
+ * Vanilla JS — nav, sticky CTA, countdown, form, scroll reveals
  */
 
 // --- Editable event date (24 July, current year) ---
@@ -18,8 +18,9 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojbrgaw";
   const mobileNav = document.getElementById("mobile-nav");
   const ctaHeader = document.querySelector(".btn--cta-header");
   const mobileCtaBar = document.getElementById("mobile-cta-bar");
-  const modal = document.getElementById("register-modal");
   const form = document.getElementById("register-form");
+  const formWrap = document.getElementById("register-form-wrap");
+  const registerSection = document.getElementById("register");
   const formSuccess = document.getElementById("form-success");
   const formError = document.getElementById("form-error");
   const formSubmitBtn = document.getElementById("form-submit-btn");
@@ -189,40 +190,6 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojbrgaw";
   tickCountdown();
   setInterval(tickCountdown, 1000);
 
-  // --- Registration modal ---
-  function openModal() {
-    if (!modal) return;
-    modal.showModal();
-    document.body.style.overflow = "hidden";
-    const firstInput = modal.querySelector("input, select");
-    if (firstInput) firstInput.focus();
-  }
-
-  function closeModal() {
-    if (!modal) return;
-    modal.close();
-    document.body.style.overflow = "";
-  }
-
-  document.querySelectorAll("[data-open-modal]").forEach(function (btn) {
-    btn.addEventListener("click", openModal);
-  });
-
-  document.querySelectorAll("[data-close-modal]").forEach(function (el) {
-    el.addEventListener("click", closeModal);
-  });
-
-  if (modal) {
-    modal.addEventListener("cancel", function (e) {
-      e.preventDefault();
-      closeModal();
-    });
-
-    modal.addEventListener("click", function (e) {
-      if (e.target === modal) closeModal();
-    });
-  }
-
   // --- FAQ accordion ---
   document.querySelectorAll(".faq-trigger").forEach(function (trigger) {
     trigger.addEventListener("click", function () {
@@ -347,8 +314,14 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojbrgaw";
           form.reset();
           form.hidden = true;
           hideFormError();
+          if (formWrap) {
+            formWrap.classList.add("is-complete");
+          }
           if (formSuccess) {
             formSuccess.hidden = false;
+          }
+          if (registerSection) {
+            registerSection.scrollIntoView({ behavior: "smooth", block: "start" });
           }
         })
         .catch(function (err) {
