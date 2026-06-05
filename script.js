@@ -19,9 +19,6 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojbrgaw";
   const ctaHeader = document.querySelector(".btn--cta-header");
   const mobileCtaBar = document.getElementById("mobile-cta-bar");
   const form = document.getElementById("register-form");
-  const formWrap = document.getElementById("register-form-wrap");
-  const registerSection = document.getElementById("register");
-  const formSuccess = document.getElementById("form-success");
   const formError = document.getElementById("form-error");
   const formSubmitBtn = document.getElementById("form-submit-btn");
 
@@ -311,18 +308,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojbrgaw";
 
       submitToFormspree()
         .then(function () {
-          form.reset();
-          form.hidden = true;
-          hideFormError();
-          if (formWrap) {
-            formWrap.classList.add("is-complete");
-          }
-          if (formSuccess) {
-            formSuccess.hidden = false;
-          }
-          if (registerSection) {
-            registerSection.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
+          window.location.href = "/thank-you";
         })
         .catch(function (err) {
           showFormError(err.message || "Unable to submit. Please try again.");

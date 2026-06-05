@@ -1523,6 +1523,120 @@ a.btn--header.is-visible {
   line-height: 1.55;
 }
 
+/* Thank you page */
+.thank-you-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.thank-you-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thank-you-section {
+  width: 100%;
+  padding: calc(var(--header-h) + var(--space-xl)) var(--gutter) var(--space-2xl);
+}
+
+.thank-you-inner {
+  width: 100%;
+  max-width: var(--narrow);
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  background: var(--ivory);
+  border: 1px solid rgba(156, 122, 46, 0.35);
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.thank-you-lead {
+  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0 0 var(--space-lg);
+}
+
+.thank-you-details {
+  margin: 0 0 var(--space-lg);
+  padding: var(--space-md) 0;
+  border-top: 1px solid rgba(156, 122, 46, 0.25);
+  border-bottom: 1px solid rgba(156, 122, 46, 0.25);
+}
+
+.thank-you-event {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-xs);
+  color: var(--ink);
+}
+
+.thank-you-date {
+  font-size: 0.9375rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin: 0;
+}
+
+.thank-you-note {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  margin: 0 0 var(--space-lg);
+  line-height: 1.6;
+}
+
+.thank-you-actions {
+  margin-bottom: var(--space-md);
+}
+
+.thank-you-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: 0;
+  max-width: 100%;
+}
+
+.thank-you-email {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  font-size: clamp(0.75rem, 3.2vw, 0.875rem);
+  line-height: 1.4;
+}
+
+.thank-you-page .footer-inner--stacked p {
+  margin: 0;
+}
+
+.thank-you-page .footer-inner--stacked {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.thank-you-page .footer-inner--stacked a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.thank-you-actions .btn {
+  width: 100%;
+  max-width: 20rem;
+  justify-content: center;
+}
+
 /* ==========================================================================
    Responsive — 375 · 768 · 1280 · 1920
    ========================================================================== */
@@ -1595,6 +1709,24 @@ a.btn--header.is-visible {
 
   .register-form-wrap {
     padding: var(--space-md);
+  }
+
+  .thank-you-section {
+    padding: calc(var(--header-h) + var(--space-lg)) var(--space-sm) var(--space-xl);
+  }
+
+  .thank-you-inner {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .thank-you-event {
+    font-size: 1.125rem;
+    padding: 0 var(--space-xs);
+  }
+
+  .thank-you-lead,
+  .thank-you-note {
+    padding: 0 var(--space-xs);
   }
 
   .faq-trigger {
