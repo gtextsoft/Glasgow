@@ -1592,7 +1592,26 @@ a.btn--header.is-visible {
 }
 
 .thank-you-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
   margin-bottom: var(--space-md);
+}
+
+.thank-you-back {
+  background: transparent;
+  border: 1px solid rgba(156, 122, 46, 0.45);
+}
+
+.thank-you-back:hover {
+  background: var(--cream);
+  border-color: var(--gold);
+}
+
+.footer-community-btn {
+  margin-bottom: var(--space-md);
+  max-width: 100%;
 }
 
 .thank-you-contact {
@@ -1635,6 +1654,7 @@ a.btn--header.is-visible {
   width: 100%;
   max-width: 20rem;
   justify-content: center;
+  text-align: center;
 }
 
 /* ==========================================================================
