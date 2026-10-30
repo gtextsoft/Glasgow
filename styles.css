@@ -875,22 +875,15 @@ a {
 
 .host-figure img {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: top center;
-  border-radius: var(--radius);
-  background: var(--mist);
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: var(--night);
 }
 
 .host-badge {
-  position: absolute;
-  left: 1rem;
-  right: 1rem;
-  bottom: 1rem;
   padding: 1rem 1.15rem;
+  border-radius: 0 0 var(--radius) var(--radius);
   background: var(--night);
   color: var(--chalk);
-  border-radius: var(--radius);
   font-family: var(--font-display);
   font-stretch: 75%;
   font-weight: 600;
