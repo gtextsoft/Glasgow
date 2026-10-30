@@ -233,6 +233,16 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojbrgaw";
     },
   };
 
+  const agreeBox = document.getElementById("reg-agree");
+
+  function validateAgree() {
+    const msg = agreeBox && !agreeBox.checked
+      ? "Please tick the box to agree to the Terms and Privacy Policy."
+      : "";
+    setFieldError("reg-agree", msg);
+    return !msg;
+  }
+
   function setFieldError(id, message) {
     const input = document.getElementById(id);
     const err = document.getElementById("err-" + id.replace("reg-", ""));
@@ -259,6 +269,8 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojbrgaw";
       if (errEl) errEl.textContent = msg;
       if (msg) valid = false;
     });
+
+    if (!validateAgree()) valid = false;
 
     return valid;
   }
@@ -332,7 +344,9 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojbrgaw";
         });
     });
 
-    form.querySelectorAll("input:not([type='hidden']), select").forEach(function (input) {
+    if (agreeBox) agreeBox.addEventListener("change", validateAgree);
+
+    form.querySelectorAll("input:not([type='hidden']):not([type='checkbox']), select").forEach(function (input) {
       input.addEventListener("input", function () {
         const key = input.name;
         if (validators[key]) {

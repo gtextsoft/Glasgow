@@ -796,6 +796,22 @@
                 </div>
               </div>
               <input type="hidden" name="admission" value="free" />
+              <div class="form-field form-check">
+                <input
+                  type="checkbox"
+                  id="reg-agree"
+                  name="agree"
+                  value="Agreed to Terms and Privacy Policy"
+                  required
+                  aria-describedby="err-agree"
+                />
+                <label for="reg-agree"
+                  >I agree to the <a href="/terms" target="_blank">Terms</a>
+                  and <a href="/privacy" target="_blank">Privacy Policy</a>,
+                  and to receive emails about this event.</label
+                >
+                <span class="field-error" id="err-agree" role="alert"></span>
+              </div>
               <p class="form-error" id="form-error" role="alert" hidden></p>
               <button
                 type="submit"
@@ -805,10 +821,7 @@
                 Reserve my seat
               </button>
               <p class="form-note">
-                All fields are required. No payment needed. By registering, you
-                agree to our <a href="/terms">Terms</a> and to receive event
-                communications, as set out in our
-                <a href="/privacy">Privacy Policy</a>.
+                All fields are required. No payment needed.
               </p>
             </form>
           </div>
