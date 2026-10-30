@@ -117,6 +117,20 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojbrgaw";
     });
   });
 
+  // --- Seat lattice: 100 seats, one highlighted ---
+  const lattice = document.getElementById("seat-lattice");
+  if (lattice) {
+    const yours = 56;
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < 100; i++) {
+      const seat = document.createElement("span");
+      seat.className = i === yours ? "seat seat--yours" : "seat";
+      seat.style.setProperty("--i", String(i));
+      frag.appendChild(seat);
+    }
+    lattice.appendChild(frag);
+  }
+
   // --- Scroll reveal ---
   const revealEls = document.querySelectorAll(".reveal");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -267,7 +281,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojbrgaw";
     if (!formSubmitBtn) return;
     formSubmitBtn.disabled = isLoading;
     formSubmitBtn.classList.toggle("is-loading", isLoading);
-    formSubmitBtn.textContent = isLoading ? "Sending…" : "Submit registration";
+    formSubmitBtn.textContent = isLoading ? "Reserving…" : "Reserve my seat";
   }
 
   async function submitToFormspree() {
